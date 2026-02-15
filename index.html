@@ -1,71 +1,184 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Breath of the Alps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1A2E35',
+                        snow: '#F8FAFC',
+                        slate: '#64748B',
+                        pine: '#2D4A3E',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scroll and smooth behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">MyPortfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+<body class="bg-snow text-navy font-sans antialiased">
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-header">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-navy tracking-wide">ALPS</div>
+            <nav class="hidden md:flex space-x-8 text-slate font-medium">
+                <a href="#home" class="hover:text-pine transition-colors">Home</a>
+                <a href="#explore" class="hover:text-pine transition-colors">Explore</a>
+                <a href="#experience" class="hover:text-pine transition-colors">Experience</a>
+            </nav>
+            <a href="#book"
+                class="hidden md:inline-block px-6 py-2 bg-navy text-white rounded-full font-medium hover:bg-pine transition-transform transform hover:scale-105 shadow-lg">Book
+                Now</a>
+        </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Developer</span></h1>
-                <p>Building modern and responsive web experiences.</p>
-                <a href="#portfolio" class="cta-button">View My Work</a>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Gradient/Image Placeholder -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-blue-50 to-white">
+            <!-- Simulated Mountain Silhouette with CSS -->
+            <div
+                class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-slate-200 to-transparent opacity-50 transform skew-y-3 origin-bottom-left">
             </div>
-        </section>
+            <div
+                class="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-t from-slate-100 to-transparent opacity-60 transform -skew-y-6 origin-bottom-right">
+            </div>
+        </div>
 
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>I am a passionate developer focusing on creating clean and efficient code. I love learning new technologies and solving complex problems.</p>
-        </section>
+        <div class="relative z-10 text-center px-4 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-navy mb-4 leading-tight">
+                Breath of the Alps
+            </h1>
+            <p class="text-xl md:text-2xl text-slate font-light tracking-wide mb-8">
+                Where the sky meets the peaks.
+            </p>
+        </div>
+    </section>
 
-        <section id="portfolio" class="section">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>A brief description of project 1.</p>
+    <!-- Feature Grid -->
+    <section id="explore" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Card 1 -->
+                <div
+                    class="group p-8 bg-snow rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-slate-100">
+                    <div class="h-48 bg-slate-200 rounded-xl mb-6 flex items-center justify-center text-slate-400 font-serif italic text-lg bg-cover bg-center"
+                        style="background-image: linear-gradient(to bottom, #f8fafc, #e2e8f0);">
+                        Mountain View
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold text-navy mb-3">Majestic Views</h3>
+                    <p class="text-slate leading-relaxed">Wake up to panoramic vistas of snow-capped peaks and pristine
+                        valleys.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>A brief description of project 2.</p>
+                <!-- Card 2 -->
+                <div
+                    class="group p-8 bg-snow rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-slate-100">
+                    <div class="h-48 bg-slate-200 rounded-xl mb-6 flex items-center justify-center text-slate-400 font-serif italic text-lg bg-cover bg-center"
+                        style="background-image: linear-gradient(to bottom, #f8fafc, #e2e8f0);">
+                        Zen Garden
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold text-navy mb-3">Pure Serenity</h3>
+                    <p class="text-slate leading-relaxed">Escape the noise and find your inner peace in our secluded
+                        alpine sanctuaries.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>A brief description of project 3.</p>
+                <!-- Card 3 -->
+                <div
+                    class="group p-8 bg-snow rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-slate-100">
+                    <div class="h-48 bg-slate-200 rounded-xl mb-6 flex items-center justify-center text-slate-400 font-serif italic text-lg bg-cover bg-center"
+                        style="background-image: linear-gradient(to bottom, #f8fafc, #e2e8f0);">
+                        Luxury Suite
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold text-navy mb-3">Luxury Stays</h3>
+                    <p class="text-slate leading-relaxed">Experience world-class comfort with heritage architecture and
+                        modern amenities.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: contact@example.com</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
+    <!-- Content Section -->
+    <section id="experience" class="py-24 bg-navy text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-800 shadow-2xl">
+                        <!-- Placeholder for Image -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-pine to-navy opacity-80 flex items-center justify-center">
+                            <span class="text-4xl font-serif text-white opacity-20">Nature's Canvas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+                        Heritage & Nature <br /> <span class="text-pine">Intertwined</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                        Our retreats are built with respect for the landscape. Using sustainable materials and local
+                        craftsmanship, we ensure that every stay honors the timeless beauty of the Alps.
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                        Whether you seek adventure on the slopes or quiet reflection by the fire, our haven offers the
+                        perfect balance of raw nature and refined luxury.
+                    </p>
+                    <a href="#"
+                        class="inline-block text-snow hover:text-pine font-medium border-b border-pine hover:border-snow transition-colors pb-1">Discover
+                        Our Story</a>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="text-2xl font-serif text-white font-bold mb-2">ALPS</div>
+                <p class="text-sm">© 2026 Alpine Retreats. All rights reserved.</p>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="hover:text-white transition-colors">Facebook</a>
+            </div>
+
+            <div class="w-full md:w-auto">
+                <form class="flex">
+                    <input type="email" placeholder="Subscribe to newsletter"
+                        class="px-4 py-2 rounded-l-md bg-slate-800 border-none focus:ring-1 focus:ring-pine text-white w-full md:w-64">
+                    <button
+                        class="bg-pine text-white px-6 py-2 rounded-r-md hover:bg-opacity-90 transition-colors font-medium">Join</button>
+                </form>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
